@@ -16,7 +16,6 @@ function Input({ label, type = "text", ...props }) {
     <>
       <label className="relative focus-within:border-gray-400 flex bg-zinc-50 border rounded-sm">
         <input
-          ref={inputRef}
           required={true}
           type={inputType}
           {...props}
@@ -26,12 +25,12 @@ function Input({ label, type = "text", ...props }) {
           {label}
         </small>
         {type === "password" && props?.value && (
-          <button
+          <div
             onClick={() => setShow((show) => !show)}
-            className=" h-full flex items-center text-sm font-semibold pr-2 bg-white"
+            className=" h-full flex items-center text-sm font-semibold pr-2 bg-white cursor-pointer"
           >
             {show ? "Hide" : "Show"}
-          </button>
+          </div>
         )}
       </label>{" "}
     </>
